@@ -10,7 +10,7 @@ let Index = () => {
       <div className={`${isLoginOpen ? "flex" : "hidden"} fixed inset-0 z-50 items-center justify-center bg-black bg-opacity-60`}> 
         <div className="bg-[#232323] rounded-lg p-8 w-full max-w-md mx-auto relative flex flex-col gap-4">
           <button onClick={() => setIsLoginOpen(false)} className="absolute top-2 right-2 text-white text-xl">&times;</button>
-          <h2 className="text-white text-xl font-semibold mb-4 text-center">Login in seconds</h2>
+          <h2 className="text-white text-xl font-semibold mb-4 text-center">Login in </h2>
           <label className="text-white text-sm mb-1">Email</label>
           <input type="email" placeholder="email" className="mb-3 p-2 rounded bg-[#181818] text-white border border-gray-600 focus:outline-none" />
           <label className="text-white text-sm mb-1">Password</label>
