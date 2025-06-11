@@ -4,22 +4,27 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon server.js",
-    "client":"npm run dev --prefix frontend",
-    "start":"node server.js",
-    "client-build":"npm run build --prefix frontend",
-    "dev":"concurrently \"npm run server\" \" npm run client \" "
-
+    "client": "npm run dev --prefix frontend",
+    "start": "node server.js",
+    "client-build": "npm run build --prefix frontend",
+    "dev": "concurrently \"npm run server\" \" npm run client \" "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.15",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mongoose": "^8.7.1",
-    "nodemon": "^3.1.7"
+    "html-to-image": "^1.11.13",
+    "mongoose": "^8.7.3",
+    "nodemon": "^3.1.7",
+    "react-hot-toast": "^2.5.2",
+    "react-spinners": "^0.15.0",
+    "react-use-downloader": "^1.2.10",
+    "tailwindcss": "^4.0.15"
   },
   "devDependencies": {
     "concurrently": "^9.0.1"

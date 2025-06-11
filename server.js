@@ -38,30 +38,48 @@ if(process.env.NODE_ENV==='production')
    })
 }
 
-let dbConnect=async()=>
-{
-   try{
-    if(process.env.NODE_ENV==='local')
-        {
-           await mongoose.connect(process.env.MONGO_DB_LOCAL_URL)
-           console.log(" local data base connect")
-        }
-        else{
-            await mongoose.connect(process.env.MONGO_DB_URL)
-            console.log("production data base connect")
+// let dbConnect=async()=>
+// {
+//    console.log("ddfsfdsfdsfs",process.env.NODE_ENV)
+//    try{
+//     if (process.env.NODE_ENV === 'local') {
+//     await mongoose.connect(process.env.MONGO_DB_LOCAL_URL);
+//     console.log("✅ Connected to Local MongoDB");
+// } else {
+//     await mongoose.connect(process.env.MONGO_DB_URL);
+//     console.log("✅ Connected to Production MongoDB");
+// }
+
+//    }
+//    catch(error)
+//    {
+//     console.log(error)
+//    }
+// }
+
+let dbConnect = async () => {
+  console.log("NODE_ENV:", process.env.NODE_ENV);
+  try {
+    if (process.env.NODE_ENV === 'local') {
+      await mongoose.connect(process.env.MONGO_DB_LOCAL_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      });
+      console.log("✅ Connected to Local MongoDB");
+    } else {
+      await mongoose.connect(process.env.MONGO_DB_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+      });
+      console.log("✅ Connected to Production MongoDB");
     }
-   }
-   catch(error)
-   {
-    console.log(error)
-   }
-}
+  } catch (error) {
+    console.log("❌ MongoDB connection error:", error.message);
+  }
+};
+
 
 dbConnect()
-
-
-
-
 
 
 app.get('/',(request,response)=>
